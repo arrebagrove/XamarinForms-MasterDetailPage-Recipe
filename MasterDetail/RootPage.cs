@@ -10,7 +10,31 @@ namespace MasterDetail
 		{
 			menuPage = new MenuPage ();
 
-			menuPage.Menu.ItemSelected += (sender, e) => NavigateTo (e.SelectedItem as MenuItem);
+
+			menuPage.Menu.ItemSelected += (sender, e) => {
+
+				if (e.SelectedItem != null) {
+					var PageSelected = e.SelectedItem as MenuItem;
+
+					((ListView)sender).SelectedItem = null;
+
+					/*
+					 * Lanzamos el evento OnMenuItemSelected, en MenuPage tendran un ejemplo para subscribirse a este evento
+					*/
+					MessagingCenter.Send<RootPage, MenuItemSelectedEventArgs> (this, 
+						"OnMenuItemSelected",
+						new MenuItemSelectedEventArgs() {
+							ItemSelected= PageSelected
+
+						});
+
+
+					NavigateTo (PageSelected);
+				}						
+
+
+
+										};
 
 			Master = menuPage;
 			Detail = new NavigationPage (new ContractsPage ());
@@ -28,5 +52,11 @@ namespace MasterDetail
 			menuPage.Menu.SelectedItem = null;
 			IsPresented = false;
 		}
+	}
+
+	public class MenuItemSelectedEventArgs : EventArgs 
+	{
+		public MenuItem ItemSelected { get; set;}
+
 	}
 }

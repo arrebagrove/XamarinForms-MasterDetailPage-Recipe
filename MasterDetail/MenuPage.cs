@@ -1,6 +1,7 @@
 ﻿using System;
 using Xamarin.Forms;
 using System.Collections.Generic;
+using System.Linq;
 
 namespace MasterDetail
 {
@@ -10,7 +11,7 @@ namespace MasterDetail
 
 		public MenuPage ()
 		{
-			Icon = "settings.png";
+			Icon = "settings";
 			Title = "menu"; // The Title property must be set.
 			BackgroundColor = Color.FromHex ("333333");
 
@@ -24,14 +25,41 @@ namespace MasterDetail
 				}
 			};
 
-			var layout = new StackLayout { 
+			var layout = new StackLayout {
 				Spacing = 0, 
 				VerticalOptions = LayoutOptions.FillAndExpand
 			};
+
+			var BottomLabel = new Label () {
+				TextColor= Color.White
+			};
+
+			/* 
+			 * Ejemplo para subscribirnos a un evento por medio de MessagingCenter, lanzado desde RootPage, 
+			 * con paso de Parametros a traves de la clase MenuItemSelectedEventArgs.
+			 * En la Clase RootPage encontraran que al momento de hacer la seleccion de un elemento del Flyout Menu 
+			 * será lanzado el Evento MessagingCenter.Send<RootPage, MenuItemSelectedEventArgs> (this,"OnMenuItemSelected",.....
+			 * 
+			*/
+			MessagingCenter.Subscribe<RootPage, MenuItemSelectedEventArgs> (this,
+																			"OnMenuItemSelected",
+																			(sender, evArgs)=> {
+//																				var menuItem =((List<MenuItem>)(Menu.ItemsSource)).Where ((x) =>  
+//																									x.Title.Equals(evArgs.ItemSelected.Title)
+//																								).FirstOrDefault();
+//																				if (menuItem!= null)
+																				BottomLabel.Text= "Last Visited Page: "+ evArgs.ItemSelected.Title;
+
+																			});
 			layout.Children.Add (menuLabel);
 			layout.Children.Add (Menu);
+			layout.Children.Add (BottomLabel);
+
+
 
 			Content = layout;
 		}
+
+
 	}
 }

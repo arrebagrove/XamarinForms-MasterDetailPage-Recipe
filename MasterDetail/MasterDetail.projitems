@@ -20,5 +20,6 @@
     <Compile Include="$(MSBuildThisFileDirectory)MenuListView.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)MenuListData.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)MenuCell.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)ContractDetailsPage.cs" />
   </ItemGroup>
 </Project>
