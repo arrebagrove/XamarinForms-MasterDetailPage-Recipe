@@ -17,7 +17,7 @@ namespace MasterDetail.Droid
 {
 	[Activity (Label = "MasterDetail.Android.Android", MainLauncher = true, ConfigurationChanges = ConfigChanges.ScreenSize | ConfigChanges.Orientation)]
 
-//	public class MainActivity : FormsApplicationActivity
+	//	public class MainActivity : FormsApplicationActivity
 	public class MainActivity : FormsAppCompatActivity
 	{
 		protected override void OnCreate (Bundle bundle)
