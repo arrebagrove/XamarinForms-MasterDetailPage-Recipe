@@ -7,22 +7,30 @@ namespace MasterDetail
 
 	public class ContractsPage : ContentPage
 	{
-		Button TestButton;
+		Button TestButton,TestButton2;
 
 		public ContractsPage ()
 		{
-			
+
 			Title = "Contracts";
 			Icon = "Contracts";
 
 			TestButton = new Button () {
 				Text="Details"
 			};
-			TestButton.Clicked += OnTestButtonClicked;
+			TestButton.Clicked+= OnTestButtonClicked;
+
+			TestButton2 = new Button () {
+				Text="ListView Example"
+			};
+			TestButton2.Clicked += (s,e)=>{
+				Navigation.PushAsync(new ListViewExamplePage());
+			};
 
 			var stackLayout = new StackLayout () {
 				Children = {
-					TestButton
+					TestButton,
+					TestButton2
 				}
 			};
 
@@ -43,15 +51,15 @@ namespace MasterDetail
 				DisplayAlert ("Alert", "Has cerrado Details", "OK");	
 			};
 
-//
-//			var NavPage = new NavigationPage (Page) {
-//				Title= "Details",
-//				Icon="Accounts.png"
-//			};
-////			Page.Icon = "accounts";
-//			NavigationPage.SetHasBackButton(Page,true);
-//			NavigationPage.SetBackButtonTitle (Page, "Home");
-//			NavigationPage.SetTitleIcon (NavPage, "accounts");
+			//
+			//			var NavPage = new NavigationPage (Page) {
+			//				Title= "Details",
+			//				Icon="Accounts.png"
+			//			};
+			////			Page.Icon = "accounts";
+			//			NavigationPage.SetHasBackButton(Page,true);
+			//			NavigationPage.SetBackButtonTitle (Page, "Home");
+			//			NavigationPage.SetTitleIcon (NavPage, "accounts");
 
 			await Navigation.PushAsync(Page);
 		}
@@ -62,5 +70,5 @@ namespace MasterDetail
 
 		}
 	}
-	
+
 }

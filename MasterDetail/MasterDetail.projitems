@@ -24,6 +24,8 @@
     <Compile Include="$(MSBuildThisFileDirectory)Pages\OpportunitiesPage.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Pages\RootPage.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Pages\LeadsPage.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Pages\ListViewExamplePage.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Models\Empleado.cs" />
   </ItemGroup>
   <ItemGroup>
     <EmbeddedResource Include="$(MSBuildThisFileDirectory)ListViewPage.xaml">
@@ -32,5 +34,6 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="$(MSBuildThisFileDirectory)Pages\" />
+    <Folder Include="$(MSBuildThisFileDirectory)Models\" />
   </ItemGroup>
 </Project>
