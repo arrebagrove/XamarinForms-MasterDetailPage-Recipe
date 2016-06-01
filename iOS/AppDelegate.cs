@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
-
+using ImageCircle.Forms.Plugin.iOS;
 using MonoTouch.Foundation;
 using MonoTouch.UIKit;
 
@@ -24,6 +24,7 @@ namespace MasterDetail.iOS
 //			window.MakeKeyAndVisible ();
 
 			LoadApplication (new App ());
+			ImageCircleRenderer.Init();
 
 			return base.FinishedLaunching (app, options);
 		}

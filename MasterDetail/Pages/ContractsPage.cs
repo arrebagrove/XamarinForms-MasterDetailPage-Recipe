@@ -40,7 +40,7 @@ namespace MasterDetail
 
 		public async void OnTestButtonClicked(object sender, EventArgs e) {
 
-			var Page =new ContractDetailsPage();
+			var Page = new ContractDetailsPage();
 
 			/*
 			 * Forma de subsribirnos al evento PageDissapearing , este evento sera lanzado  

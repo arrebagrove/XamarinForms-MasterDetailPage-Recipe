@@ -2,6 +2,7 @@
 
 using Xamarin.Forms;
 using System.Collections.ObjectModel;
+using ImageCircle.Forms.Plugin.Abstractions;
 
 namespace MasterDetail
 {
@@ -25,7 +26,10 @@ namespace MasterDetail
 
 		public ListViewExamplePage ()
 		{
-			EmpledosListView = new ListView();
+			EmpledosListView = new ListView
+			{
+				RowHeight = 60,
+			};
 			ListData= new ObservableCollection<Empleado>();
 
 			ListData.Add(new Empleado(){
@@ -79,7 +83,17 @@ namespace MasterDetail
 //			Labels del template
 			var nombreLabel = new Label ();
 			var apellidoLabel = new Label();
-			var fotoPerfilImage= new Image();
+			var fotoPerfilImage = new CircleImage
+			{
+				Aspect = Aspect.AspectFit,
+				BorderColor = Color.Black,
+				BorderThickness = 3,
+				HeightRequest = 25,
+				WidthRequest = 25,
+				VerticalOptions = LayoutOptions.Center,
+				HorizontalOptions = LayoutOptions.Start,
+				FillColor = Color.Black
+			};
 
 //			Asignamos las propiedades bindeables, estas propiedades son las del BindingContext,
 //			el cual es el modelo de nuestra Collection en este caso es Empleado.
@@ -119,10 +133,13 @@ namespace MasterDetail
 
 			var stack = new StackLayout {
 				Orientation= StackOrientation.Horizontal,
+				Spacing = 10,
+				Padding = 5,
 				Children= {
 					fotoPerfilImage,
-					new StackLayout() {
+					new StackLayout{
 						Orientation= StackOrientation.Vertical,
+						Spacing = 2,
 						Children={
 							nombreLabel,
 							apellidoLabel

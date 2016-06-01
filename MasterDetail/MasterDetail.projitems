@@ -26,6 +26,7 @@
     <Compile Include="$(MSBuildThisFileDirectory)Pages\LeadsPage.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Pages\ListViewExamplePage.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Models\Empleado.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Renderers\CustomEntryRenderer.cs" />
   </ItemGroup>
   <ItemGroup>
     <EmbeddedResource Include="$(MSBuildThisFileDirectory)ListViewPage.xaml">
@@ -35,5 +36,6 @@
   <ItemGroup>
     <Folder Include="$(MSBuildThisFileDirectory)Pages\" />
     <Folder Include="$(MSBuildThisFileDirectory)Models\" />
+    <Folder Include="$(MSBuildThisFileDirectory)Renderers\" />
   </ItemGroup>
 </Project>

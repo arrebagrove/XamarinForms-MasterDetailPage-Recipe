@@ -11,12 +11,19 @@ namespace MasterDetail
 		public ContractDetailsPage ()
 		{
 			Title="Contract Details";
-//			Icon = "Accounts";
-//			NavigationPage.SetHasNavigationBar (this, true);
-//			NavigationPage.SetHasBackButton (this, true);
-			Content = new StackLayout { 
+			//			Icon = "Accounts";
+			//			NavigationPage.SetHasNavigationBar (this, true);
+			//			NavigationPage.SetHasBackButton (this, true);
+
+
+			Content = new StackLayout
+			{
 				Children = {
-					new Label { Text = "Hello ContentPage" }
+					new CustomEntryRenderer {
+						Placeholder = "Hola desde iOS",
+						HasBorder = true,
+						HorizontalOptions = LayoutOptions.CenterAndExpand
+					}
 				}
 			};
 		}
