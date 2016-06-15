@@ -132,6 +132,7 @@
     <Compile Include="Main.cs" />
     <Compile Include="AppDelegate.cs" />
     <Compile Include="Renderers\EntryRenderer_iOS.cs" />
+    <Compile Include="TextToSpeech_iOS.cs" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Renderers\" />

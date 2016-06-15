@@ -27,6 +27,13 @@
     <Compile Include="$(MSBuildThisFileDirectory)Pages\ListViewExamplePage.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Models\Empleado.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Renderers\CustomEntryRenderer.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)ITextToSpeech.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)ViewModels\PromocionesVM.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)ViewModels\BaseViewModel.cs">
+      <Link>BaseViewModel.cs</Link>
+    </Compile>
+    <Compile Include="$(MSBuildThisFileDirectory)Promocion.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Cells\CeldaDePromocion.cs" />
   </ItemGroup>
   <ItemGroup>
     <EmbeddedResource Include="$(MSBuildThisFileDirectory)ListViewPage.xaml">
@@ -37,5 +44,7 @@
     <Folder Include="$(MSBuildThisFileDirectory)Pages\" />
     <Folder Include="$(MSBuildThisFileDirectory)Models\" />
     <Folder Include="$(MSBuildThisFileDirectory)Renderers\" />
+    <Folder Include="$(MSBuildThisFileDirectory)ViewModels\" />
+    <Folder Include="$(MSBuildThisFileDirectory)Cells\" />
   </ItemGroup>
 </Project>
